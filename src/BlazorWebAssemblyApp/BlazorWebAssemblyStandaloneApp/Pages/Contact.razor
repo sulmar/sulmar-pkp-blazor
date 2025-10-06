@@ -2,14 +2,28 @@
 
 <h3>Contact</h3>
 
-<p>Adres: @city @street</p>
+<p>Adres biura: @WorkAddress.City @WorkAddress.Street</p>
 
+<p>Adres kontaktowy: @ContactAddess.City @ContactAddess.Street</p>
 
 
 @code {
+    private Address WorkAddress = new Address()
+        {
+            City = "Krakow",
+            Street = "ul. Dworcowa 19"
+        };
 
-    private string city = "Krakow";
-    string street = "ul. Dworcowa 19";
+    private Address ContactAddess = new Address
+    {
+        City = "Warszawa",
+        Street = "Al. Jerozolimskie"
+    };
 
+    private class Address
+    {
+        public required string City { get; set; }
+        public string? Street { get; set; }
+    }
 }
 
