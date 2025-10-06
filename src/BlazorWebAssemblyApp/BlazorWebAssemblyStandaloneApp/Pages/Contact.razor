@@ -1,11 +1,12 @@
 ﻿@page "/contact"
+@using BlazorWebAssemblyStandaloneApp.Components
+@using BlazorWebAssemblyStandaloneApp.Models
 
 <h3>Contact</h3>
 
-<p>Adres biura: @WorkAddress.City @WorkAddress.Street</p>
 
-<p>Adres kontaktowy: @ContactAddess.City @ContactAddess.Street</p>
-
+<AddressComponent Title="Adres biura:" Address="@WorkAddress" />
+<AddressComponent Title="Adres koresp.:" Address="@ContactAddress" />
 
 @code {
     private Address WorkAddress = new Address()
@@ -14,16 +15,14 @@
             Street = "ul. Dworcowa 19"
         };
 
-    private Address ContactAddess = new Address
+    private Address ContactAddress = new Address
     {
         City = "Warszawa",
         Street = "Al. Jerozolimskie"
     };
 
-    private class Address
-    {
-        public required string City { get; set; }
-        public string? Street { get; set; }
-    }
+    // TODO: Dodaj adres dostawy np. ShippingAddress 
+
+    
 }
 
