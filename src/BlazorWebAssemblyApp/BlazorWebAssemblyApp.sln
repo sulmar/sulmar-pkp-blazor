@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWebAssemblyStandalone
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "..\Api\Api.csproj", "{356A1DA0-DDCA-4B52-83FB-F239B8B53C32}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "..\Domain\Domain.csproj", "{11912D93-989A-40F6-A1CC-8EAA55D9FCC7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,18 @@ Global
 		{356A1DA0-DDCA-4B52-83FB-F239B8B53C32}.Release|x64.Build.0 = Release|Any CPU
 		{356A1DA0-DDCA-4B52-83FB-F239B8B53C32}.Release|x86.ActiveCfg = Release|Any CPU
 		{356A1DA0-DDCA-4B52-83FB-F239B8B53C32}.Release|x86.Build.0 = Release|Any CPU
+		{11912D93-989A-40F6-A1CC-8EAA55D9FCC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11912D93-989A-40F6-A1CC-8EAA55D9FCC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11912D93-989A-40F6-A1CC-8EAA55D9FCC7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{11912D93-989A-40F6-A1CC-8EAA55D9FCC7}.Debug|x64.Build.0 = Debug|Any CPU
+		{11912D93-989A-40F6-A1CC-8EAA55D9FCC7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{11912D93-989A-40F6-A1CC-8EAA55D9FCC7}.Debug|x86.Build.0 = Debug|Any CPU
+		{11912D93-989A-40F6-A1CC-8EAA55D9FCC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11912D93-989A-40F6-A1CC-8EAA55D9FCC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11912D93-989A-40F6-A1CC-8EAA55D9FCC7}.Release|x64.ActiveCfg = Release|Any CPU
+		{11912D93-989A-40F6-A1CC-8EAA55D9FCC7}.Release|x64.Build.0 = Release|Any CPU
+		{11912D93-989A-40F6-A1CC-8EAA55D9FCC7}.Release|x86.ActiveCfg = Release|Any CPU
+		{11912D93-989A-40F6-A1CC-8EAA55D9FCC7}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

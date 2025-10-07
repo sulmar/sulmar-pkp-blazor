@@ -1,4 +1,4 @@
-﻿namespace BlazorWebAssemblyStandaloneApp.Models;
+﻿namespace Domain.Models;
 
 public class Customer
 {
