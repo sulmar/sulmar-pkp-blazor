@@ -41,9 +41,6 @@ Użyj komponentu `InfoCard.razor` co najmniej cztery razy z różnymi danymi w u
 
 --- 
 
-## 💡 Wskazówki
-- Możesz użyć Bootstrap (`bg-light`, `text-white`, `shadow-sm`, `rounded`) lub własnego CSS
-
 
 ### 👉 Przy projektowaniu układu pomocne może być narzędzie: [`https://flexboxlabs.netlify.app`](https://flexboxlabs.netlify.app/) 
 
