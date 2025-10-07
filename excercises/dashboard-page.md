@@ -11,22 +11,26 @@ Celem jest przećwiczenie tworzenia komponentu wielokrotnego użytku.
 
 ## ✅ Wymagania funkcjonalne:
 1. **Komponent** `InfoCard.razor`
-Stwórz komponent, który wyświetla przekazane dane w formie estetycznego „boxa”.
+Stwórz komponent, który wyświetla przekazane dane w formie kafelki.
 
 Parametry komponentu:
   - Tytuł (string) – etykieta informacji
   - Wartość (string lub liczba) – główna dana
-  - KolorTła (opcjonalny) – klasa CSS (np. bg-primary, bg-success, bg-warning)
-  - Ikona (opcjonalna)  – emoji lub ikona z biblioteki (np. 🛒, 👤, ✅)
-  
-Wymagania wizualne:
-- Zaokrąglone rogi
-- Cień (box-shadow)
-- Estetyczny layout gotowy do użycia w siatce
 
 
 2. **Strona** `Dashboard.razor` 
-Użyj komponentu `InfoCard.razor` co najmniej cztery razy z różnymi danymi w układzie siatki (grid/flex)
+Użyj komponentu `InfoCard.razor` co najmniej cztery razy z różnymi danymi w układzie siatki.
+
+```html
+<table border="1">
+  <tr>
+    <td>Kolumna 1</td>
+    <td>Kolumna 2</td>
+    <td>Kolumna 3</td>
+    <td>Kolumna 4</td>
+  </tr>
+</table>
+```
 
 **Przykładowe karty:**
 - 👤 Liczba klientów: `125`
