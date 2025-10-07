@@ -1,8 +1,15 @@
+using Api.Endpoints;
+using Domain.Abstractions;
+using Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+// Rejestracja w kontenerze wstrzykiwania zaleznosci (Dependency Injection)
+builder.Services.AddScoped<ICustomerRepository, FakeCustomerRepository>();
 
 var app = builder.Build();
 
@@ -16,10 +23,9 @@ app.UseHttpsRedirection();
 
 app.MapGet("/", () => "Hello World!");
 
-app.MapGet("/api/customers", () => "Get customers!");
-app.MapPost("/api/customers", () => "Created customer");
-app.MapPut("/api/customers", () => "Updated customer");
-app.MapDelete("/api/customers", () => "Deleted customer");
+app.MapGroup("/api/customers").MapCustomersApi();
+
+
 
 
 app.Run();
