@@ -1,53 +1,53 @@
-<file name=0 path=/Users/marcinsulecki/Projects/blazor-starter/excercises/dashboard-page.md># 📊 Task: Dashboard
+# 📊 Zadanie: Dashboard
 
-## 🧩 Goal:
-Your task is to create a reusable Blazor component (`InfoCard.razor`) that will serve as an element of a dashboard presenting key data – such as the number of customers, products, system status, etc.
-The goal is to practice creating a reusable component.
+## 🧩 Cel:
+Twoim zadaniem jest stworzenie wielokrotnego komponentu Blazora (InfoCard.razor), który posłuży jako element dashboardu prezentujący kluczowe dane – takie jak liczba klientów, produktów, status systemu itp.
+Celem jest przećwiczenie tworzenia komponentu wielokrotnego użytku.
 
-## 🖼️ Sketch: 
+## 🖼️ Szkic: 
   ![alt text](dashboard.png)
 
 ---
 
-## ✅ Functional Requirements:
-1. **Component** `InfoCard.razor`
-Create a component that displays the passed data in the form of an aesthetic "box".
+## ✅ Wymagania funkcjonalne:
+1. **Komponent** `InfoCard.razor`
+Stwórz komponent, który wyświetla przekazane dane w formie estetycznego „boxa”.
 
-Component parameters:
-  - Title (string) – label of the information
-  - Value (string or number) – main data
-  - BackgroundColor (optional) – CSS class (e.g., bg-primary, bg-success, bg-warning)
-  - Icon (optional) – emoji or icon from a library (e.g., 🛒, 👤, ✅)
+Parametry komponentu:
+  - Tytuł (string) – etykieta informacji
+  - Wartość (string lub liczba) – główna dana
+  - KolorTła (opcjonalny) – klasa CSS (np. bg-primary, bg-success, bg-warning)
+  - Ikona (opcjonalna)  – emoji lub ikona z biblioteki (np. 🛒, 👤, ✅)
   
-Visual requirements:
-- Rounded corners
-- Shadow (box-shadow)
-- Aesthetic layout ready to be used in a grid
+Wymagania wizualne:
+- Zaokrąglone rogi
+- Cień (box-shadow)
+- Estetyczny layout gotowy do użycia w siatce
 
 
-2. **Page** `Dashboard.razor` 
-Use the `InfoCard.razor` component at least four times with different data in a grid/flex layout
+2. **Strona** `Dashboard.razor` 
+Użyj komponentu `InfoCard.razor` co najmniej cztery razy z różnymi danymi w układzie siatki (grid/flex)
 
-**Example cards:**
-- 👤 Number of customers: `125`
-- 🛒 Number of products: `58`
-- 💰 Average product price: `48.90 zł`
-- ✅ System status: `Online`
+**Przykładowe karty:**
+- 👤 Liczba klientów: `125`
+- 🛒 Liczba produktów: `58`
+- 💰 Średnia cena produktu: `48,90 zł`
+- ✅ Status systemu: `Online`
 
 
 --- 
 
-## 💡 Tips
-- You can use Bootstrap (`bg-light`, `text-white`, `shadow-sm`, `rounded`) or your own CSS
+## 💡 Wskazówki
+- Możesz użyć Bootstrap (`bg-light`, `text-white`, `shadow-sm`, `rounded`) lub własnego CSS
 
 
-### 👉 For designing the layout, the tool [`https://flexboxlabs.netlify.app`](https://flexboxlabs.netlify.app/) might be helpful 
+### 👉 Przy projektowaniu układu pomocne może być narzędzie: [`https://flexboxlabs.netlify.app`](https://flexboxlabs.netlify.app/) 
 
 
 ---
 
 
-## ⏱️ Estimated Time: **45 minutes**
+## ⏱️ Czas realizacji: **45 minut**
 
 
-If you have any questions — ask the trainer 🙂</file>
+W razie pytań — zapytaj prowadzącego 🙂
