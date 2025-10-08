@@ -1,29 +1,20 @@
 ﻿@using Domain.Models
 
-<table>
-    <thead>
+<TableComponent Items="@Customers">
+    <HeaderTemplate>
         <tr>
             <th>Name</th>
             <th>Email</th>
         </tr>
-    </thead>
+    </HeaderTemplate>
 
-    <tbody>
-        @foreach (var customer in Customers)
-        {
-            <tr>
-                <td>@customer.Name</td>
-                <td>@customer.Email</td>
-            </tr>
-        }
-    </tbody>
-
-    <tfoot>
+    <RowTemplate Context="customer">
         <tr>
-            <td>Count: @Customers.Count</td>
+            <td>@customer.Name</td>
+            <td>@customer.Email</td>
         </tr>
-    </tfoot>
-</table>
+    </RowTemplate>
+</TableComponent>
 
 @code {
 

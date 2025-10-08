@@ -9,21 +9,7 @@
 
 else
 {
-    <TableComponent Items="@customers">
-        <HeaderTemplate>
-            <tr>
-                <th>Name</th>
-                <th>Email</th>
-            </tr>
-        </HeaderTemplate>
-
-        <RowTemplate Context="customer">
-            <tr>
-                <td>@customer.Name</td>
-                <td>@customer.Email</td>
-            </tr>
-        </RowTemplate>
-    </TableComponent>
+   <CustomersTableComponent Customers="@customers" />
 }
 
 
