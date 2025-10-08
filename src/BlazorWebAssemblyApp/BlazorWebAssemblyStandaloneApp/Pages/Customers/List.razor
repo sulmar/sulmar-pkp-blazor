@@ -3,13 +3,30 @@
 
 <h3>List</h3>
 
-<ul>
-    @foreach(var customer in customers)
-    {
-          <li>@customer.Name @customer.Email</li>
-    }
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+    </thead>
 
-</ul>
+    <tbody>
+        @foreach (var customer in customers)
+        {
+            <tr>
+                <td>@customer.Name</td>
+                <td>@customer.Email</td>
+            </tr>
+        }
+    </tbody>
+
+    <tfoot>
+        <tr>
+            <td>Count: @customers.Count</td>
+        </tr>
+    </tfoot>
+</table>
 
 
 
