@@ -112,6 +112,7 @@ src/
 │   └── BlazorWebAssemblyStandaloneApp/
 ├── Domain/                 # Warstwa domenowa
 └── Infrastructure/         # Warstwa infrastruktury
+```
 
 # Instalacja szablonów MudBlazor w trybie offline
 
@@ -137,5 +138,7 @@ Na komputerze z dostępem do Internetu:
    [https://www.nuget.org/packages/MudBlazor.Templates](https://www.nuget.org/packages/MudBlazor.Templates)
 2. Wybierz wersję, np. **7.0.3**
 3. Kliknij przycisk **Download package (.nupkg)**
-4. Zapisz plik np. jako:
+4. Zapisz plik np. jako: 
+```
+MudBlazor.Templates.7.0.3.nupkg
 ```
