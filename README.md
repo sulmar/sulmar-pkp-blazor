@@ -111,6 +111,7 @@ src/
 │   ├── BlazorWebAssemblyApp.Client/
 │   └── BlazorWebAssemblyStandaloneApp/
 ├── Domain/                 # Warstwa domenowa
+└── Infrastructure/         # Warstwa infrastruktury
 
 # Instalacja szablonów MudBlazor w trybie offline
 
@@ -137,7 +138,4 @@ Na komputerze z dostępem do Internetu:
 2. Wybierz wersję, np. **7.0.3**
 3. Kliknij przycisk **Download package (.nupkg)**
 4. Zapisz plik np. jako:
-
-
-└── Infrastructure/         # Warstwa infrastruktury
 ```
