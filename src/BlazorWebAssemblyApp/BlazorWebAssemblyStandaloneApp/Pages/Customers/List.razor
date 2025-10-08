@@ -14,15 +14,18 @@
 
 
 @code {
-    private List<Customer> customers;
+    private List<Customer>? customers = new List<Customer>();
 
-    protected override void OnInitialized()
+    [Inject]
+    private HttpClient Http { get; set; }
+
+    protected override async Task OnInitializedAsync()
     {
         // TODO: Przenies do Api
-        //  customers = 
-
-        throw new NotImplementedException();
+        customers = await Http.GetFromJsonAsync<List<Customer>>("api/customers");
     }
+
+ 
 
 
 
