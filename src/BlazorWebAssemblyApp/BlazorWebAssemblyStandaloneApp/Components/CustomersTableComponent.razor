@@ -1,0 +1,33 @@
+﻿@using Domain.Models
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var customer in Customers)
+        {
+            <tr>
+                <td>@customer.Name</td>
+                <td>@customer.Email</td>
+            </tr>
+        }
+    </tbody>
+
+    <tfoot>
+        <tr>
+            <td>Count: @Customers.Count</td>
+        </tr>
+    </tfoot>
+</table>
+
+@code {
+
+    [Parameter]
+    public List<Customer> Customers { get; set; }
+
+}

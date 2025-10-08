@@ -1,5 +1,4 @@
 ﻿@page "/customers"
-@using Domain.Models
 
 <h3>List</h3>
 
@@ -10,30 +9,7 @@
 
 else
 {
-    <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Email</th>
-            </tr>
-        </thead>
-
-        <tbody>
-            @foreach (var customer in customers)
-            {
-                <tr>
-                    <td>@customer.Name</td>
-                    <td>@customer.Email</td>
-                </tr>
-            }
-        </tbody>
-
-        <tfoot>
-            <tr>
-                <td>Count: @customers.Count</td>
-            </tr>
-        </tfoot>
-    </table>
+    <CustomersTableComponent Customers="@customers" />
 }
 
 
