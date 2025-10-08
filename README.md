@@ -142,3 +142,18 @@ Na komputerze z dostępem do Internetu:
 ```
 MudBlazor.Templates.7.0.3.nupkg
 ```
+---
+
+### 2. Skopiuj paczkę do środowiska offline
+
+Przenieś plik `MudBlazor.Templates.<wersja>.nupkg` do folderu na komputerze bez dostępu do Internetu, np.:
+
+
+---
+
+### 3. Zainstaluj szablony z pliku
+
+Uruchom terminal i wykonaj polecenie:
+
+```bash
+dotnet new install "C:\local-nuget\MudBlazor.Templates.7.0.3.nupkg"
