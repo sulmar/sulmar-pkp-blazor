@@ -17,10 +17,10 @@ else
             </tr>
         </HeaderTemplate>
 
-        <RowTemplate>
+        <RowTemplate Context="customer">
             <tr>
-                <td>@context.Name</td>
-                <td>@context.Email</td>
+                <td>@customer.Name</td>
+                <td>@customer.Email</td>
             </tr>
         </RowTemplate>
     </TableComponent>
