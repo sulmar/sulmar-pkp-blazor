@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36518.9 d17.14
+VisualStudioVersion = 17.14.36518.9
 MinimumVisualStudioVersion = 16.0.0.0
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWebAssemblyApp", "BlazorWebAssemblyApp\BlazorWebAssemblyApp.csproj", "{5685D5A8-5158-4B0B-B54E-D88DED372F8D}"
 EndProject
@@ -14,6 +14,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "..\Domain\Domain.csproj", "{11912D93-989A-40F6-A1CC-8EAA55D9FCC7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "..\Infrastructure\Infrastructure.csproj", "{0C744083-2209-4187-A768-BF5D80DE41AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MudBlazorWebAssemblyApp", "..\MudBlazorWebAssemblyApp\MudBlazorWebAssemblyApp\MudBlazorWebAssemblyApp.csproj", "{7C72CDF5-93F4-C098-3684-9B97FC48A8F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MudBlazorWebAssemblyApp.Client", "..\MudBlazorWebAssemblyApp\MudBlazorWebAssemblyApp.Client\MudBlazorWebAssemblyApp.Client.csproj", "{58675CD0-3D98-E66E-EB18-0495586E1965}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -97,6 +101,30 @@ Global
 		{0C744083-2209-4187-A768-BF5D80DE41AD}.Release|x64.Build.0 = Release|Any CPU
 		{0C744083-2209-4187-A768-BF5D80DE41AD}.Release|x86.ActiveCfg = Release|Any CPU
 		{0C744083-2209-4187-A768-BF5D80DE41AD}.Release|x86.Build.0 = Release|Any CPU
+		{7C72CDF5-93F4-C098-3684-9B97FC48A8F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C72CDF5-93F4-C098-3684-9B97FC48A8F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C72CDF5-93F4-C098-3684-9B97FC48A8F3}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7C72CDF5-93F4-C098-3684-9B97FC48A8F3}.Debug|x64.Build.0 = Debug|Any CPU
+		{7C72CDF5-93F4-C098-3684-9B97FC48A8F3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7C72CDF5-93F4-C098-3684-9B97FC48A8F3}.Debug|x86.Build.0 = Debug|Any CPU
+		{7C72CDF5-93F4-C098-3684-9B97FC48A8F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C72CDF5-93F4-C098-3684-9B97FC48A8F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C72CDF5-93F4-C098-3684-9B97FC48A8F3}.Release|x64.ActiveCfg = Release|Any CPU
+		{7C72CDF5-93F4-C098-3684-9B97FC48A8F3}.Release|x64.Build.0 = Release|Any CPU
+		{7C72CDF5-93F4-C098-3684-9B97FC48A8F3}.Release|x86.ActiveCfg = Release|Any CPU
+		{7C72CDF5-93F4-C098-3684-9B97FC48A8F3}.Release|x86.Build.0 = Release|Any CPU
+		{58675CD0-3D98-E66E-EB18-0495586E1965}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58675CD0-3D98-E66E-EB18-0495586E1965}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58675CD0-3D98-E66E-EB18-0495586E1965}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{58675CD0-3D98-E66E-EB18-0495586E1965}.Debug|x64.Build.0 = Debug|Any CPU
+		{58675CD0-3D98-E66E-EB18-0495586E1965}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{58675CD0-3D98-E66E-EB18-0495586E1965}.Debug|x86.Build.0 = Debug|Any CPU
+		{58675CD0-3D98-E66E-EB18-0495586E1965}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58675CD0-3D98-E66E-EB18-0495586E1965}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58675CD0-3D98-E66E-EB18-0495586E1965}.Release|x64.ActiveCfg = Release|Any CPU
+		{58675CD0-3D98-E66E-EB18-0495586E1965}.Release|x64.Build.0 = Release|Any CPU
+		{58675CD0-3D98-E66E-EB18-0495586E1965}.Release|x86.ActiveCfg = Release|Any CPU
+		{58675CD0-3D98-E66E-EB18-0495586E1965}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

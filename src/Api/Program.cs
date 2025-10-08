@@ -12,7 +12,7 @@ builder.Services.AddOpenApi();
 builder.Services.AddScoped<ICustomerRepository, FakeCustomerRepository>();
 
 builder.Services.AddCors(options => options.AddDefaultPolicy(
-    policy => policy.WithOrigins("https://localhost:7049")
+    policy => policy.WithOrigins("https://localhost:7049", "https://localhost:7118")
                         .WithMethods("GET")
                         .AllowAnyHeader()
     

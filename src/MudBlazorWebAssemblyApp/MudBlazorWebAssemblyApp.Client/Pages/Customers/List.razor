@@ -1,0 +1,33 @@
+﻿@page "/customers"
+@using Domain.Models
+
+<MudText Typo="Typo.h3">Customers</MudText>
+
+@if (Customers is null)
+{
+    <MudProgressCircular Color="Color.Primary" Size="Size.Small" Indeterminate="true" />
+}
+else
+{
+    <MudDataGrid Items="@Customers">
+        <Columns>
+            <PropertyColumn Property="x => x.Name" Title="Name" />
+            <PropertyColumn Property="x => x.Email" Title="E-mail" />
+        </Columns>
+    </MudDataGrid>
+}
+
+
+@code {
+
+   [Inject]
+   private HttpClient Http { get; set; }
+
+    private List<Customer>? Customers { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Customers = await Http.GetFromJsonAsync<List<Customer>>("api/customers");
+    }
+
+}
