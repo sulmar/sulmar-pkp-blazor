@@ -3,46 +3,52 @@
 
 <h3>List</h3>
 
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Email</th>
-        </tr>
-    </thead>
+@if (customers is null)
+{
+    <p>Loading customers...</p>
+}
 
-    <tbody>
-        @foreach (var customer in customers)
-        {
+else
+{
+    <table>
+        <thead>
             <tr>
-                <td>@customer.Name</td>
-                <td>@customer.Email</td>
+                <th>Name</th>
+                <th>Email</th>
             </tr>
-        }
-    </tbody>
+        </thead>
 
-    <tfoot>
-        <tr>
-            <td>Count: @customers.Count</td>
-        </tr>
-    </tfoot>
-</table>
+        <tbody>
+            @foreach (var customer in customers)
+            {
+                <tr>
+                    <td>@customer.Name</td>
+                    <td>@customer.Email</td>
+                </tr>
+            }
+        </tbody>
 
+        <tfoot>
+            <tr>
+                <td>Count: @customers.Count</td>
+            </tr>
+        </tfoot>
+    </table>
+}
 
 
 @code {
-    private List<Customer>? customers = new List<Customer>();
+    private List<Customer>? customers;
 
     [Inject]
     private HttpClient Http { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
-        // TODO: Przenies do Api
         customers = await Http.GetFromJsonAsync<List<Customer>>("api/customers");
     }
 
- 
+
 
 
 

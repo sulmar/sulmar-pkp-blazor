@@ -7,7 +7,7 @@ public class FakeCustomerRepository : ICustomerRepository
 {
     public List<Customer> GetAll()
     {
-        Thread.Sleep(5000); // Symulacja opoznienia
+        // Thread.Sleep(5000); // Symulacja opoznienia
 
         return new List<Customer>
         {
