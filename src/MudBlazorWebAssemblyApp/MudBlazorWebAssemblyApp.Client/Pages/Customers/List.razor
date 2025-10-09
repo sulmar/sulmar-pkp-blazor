@@ -1,6 +1,7 @@
 ﻿@page "/customers"
 @using Domain.Models
-@inject HttpClient Http
+@using MudBlazorWebAssemblyApp.Client.Services
+@inject ICustomerService Api
 
 <MudText Typo="Typo.h3">Customers</MudText>
 
@@ -31,8 +32,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-
-        customers = await Http.GetFromJsonAsync<List<Customer>>("api/customers");
+        customers = await Api.GetAllAsync();
     }
 
 }
