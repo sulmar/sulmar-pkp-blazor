@@ -1,6 +1,7 @@
 ﻿@page "/customers/{id:int}"
 @using Domain.Models
-@inject HttpClient Http
+@using MudBlazorWebAssemblyApp.Client.Services
+@inject ICustomerService Api
 
 <h3>View CustomerId: @Id</h3>
 
@@ -28,7 +29,7 @@ else
         // dobra praktyka
         var request = string.Format("api/customers/{0}", Id);
 
-        customer = await Http.GetFromJsonAsync<Customer>($"api/customers/{Id}");
+        customer = await Api.GetByIdAsync(Id);
     }
 
 }

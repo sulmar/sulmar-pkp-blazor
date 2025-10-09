@@ -7,6 +7,7 @@ namespace MudBlazorWebAssemblyApp.Client.Services;
 public interface ICustomerService
 {
     Task<List<Customer>?> GetAllAsync();
+    Task<Customer?> GetByIdAsync(int id);
 }
 
 public class CustomerService : ICustomerService
@@ -21,5 +22,10 @@ public class CustomerService : ICustomerService
     public Task<List<Customer>?> GetAllAsync()
     {
         return _http.GetFromJsonAsync<List<Customer>>("api/customers");
+    }
+
+    public Task<Customer?> GetByIdAsync(int id)
+    {
+        return _http.GetFromJsonAsync<Customer>($"api/customers/{id}");
     }
 }
