@@ -1,9 +1,10 @@
 ﻿@page "/customers/create"
 @using Domain.Models
+@using Blazored.FluentValidation
 
 <EditForm Model="@customer" OnValidSubmit="@OnValidSubmit" FormName="CustomerForm" >
 
-    <DataAnnotationsValidator />
+    <FluentValidationValidator />
 
     <MudGrid>
         <MudItem xs="12" sm="7">
