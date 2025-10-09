@@ -10,22 +10,9 @@ public interface ICustomerService
     Task<Customer?> GetByIdAsync(int id);
 }
 
-public class CustomerService : ICustomerService
+// Primary Constructor
+public class CustomerService(HttpClient _http) : ICustomerService
 {
-    private HttpClient _http;
-
-    public CustomerService(HttpClient http)
-    {
-        _http = http;
-    }
-
-    public Task<List<Customer>?> GetAllAsync()
-    {
-        return _http.GetFromJsonAsync<List<Customer>>("api/customers");
-    }
-
-    public Task<Customer?> GetByIdAsync(int id)
-    {
-        return _http.GetFromJsonAsync<Customer>($"api/customers/{id}");
-    }
+    public Task<List<Customer>?> GetAllAsync() => _http.GetFromJsonAsync<List<Customer>>("api/customers");
+    public Task<Customer?> GetByIdAsync(int id) => _http.GetFromJsonAsync<Customer>($"api/customers/{id}");
 }

@@ -1,0 +1,35 @@
+﻿@page "/customers/create"
+@using Domain.Models
+
+<EditForm Model="@customer" OnValidSubmit="@OnValidSubmit" >
+    <MudGrid>
+        <MudItem xs="12" sm="7">
+            <MudCard>
+                <MudCardContent>
+                    <MudTextField Label="Name" For="@(() => customer.Name)" />
+                    <MudTextField Label="E-mail" For="@(() => customer.Email)" />
+                </MudCardContent>
+                
+                <MudCardActions>
+                    <MudButton ButtonType="ButtonType.Submit" 
+                     Color="Color.Primary" Variant="Variant.Filled">Create</MudButton>
+
+                </MudCardActions>
+            
+            </MudCard>
+        </MudItem>
+    </MudGrid>
+</EditForm>
+
+@code {
+
+    private Customer customer = new Customer();
+
+    private void OnValidSubmit(EditContext context)
+    {
+        // TODO: Dodaj request do Api
+    }
+
+
+
+}
