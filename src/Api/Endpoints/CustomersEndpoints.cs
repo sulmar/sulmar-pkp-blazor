@@ -10,7 +10,7 @@ public static class CustomersEndpoints
     public static RouteGroupBuilder MapCustomersApi(this RouteGroupBuilder group)
     {
         group.MapGet("", (ICustomerRepository repository) => repository.GetAll());
-        group.MapGet("{id}", (int id) => $"Hello Customer {id}");
+        group.MapGet("{id}", (int id, ICustomerRepository repository) => repository.GetById(id));
         group.MapPost("", () => "Created customer");
         group.MapPut("", () => "Updated customer");
         group.MapDelete("", () => "Deleted customer");

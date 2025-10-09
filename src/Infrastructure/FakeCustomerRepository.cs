@@ -5,11 +5,11 @@ namespace Infrastructure;
 
 public class FakeCustomerRepository : ICustomerRepository
 {
-    public List<Customer> GetAll()
-    {
-        // Thread.Sleep(5000); // Symulacja opoznienia
+    private List<Customer> customers;
 
-        return new List<Customer>
+    public FakeCustomerRepository()
+    {
+        customers = new List<Customer>
         {
             new Customer { Id = 1, Name = "Lorem", Email="info@lorem.pl" },
             new Customer { Id = 2, Name = "Ipsum", Email="info@ipsum.pl" },
@@ -18,4 +18,36 @@ public class FakeCustomerRepository : ICustomerRepository
             new Customer { Id = 5, Name = "Pkp Informatyka", Email="info@pkp.pl" },
         };
     }
+
+    public List<Customer> GetAll()
+    {
+        // Thread.Sleep(5000); // Symulacja opoznienia
+
+        return customers;
+    }
+
+    public Customer GetById(int id)
+    {
+        // LINQ 
+        return customers.Where(customer => customer.Id == id).FirstOrDefault();
+    }
+
+    /*
+    public Customer GetById(int id)
+    {
+
+        // SQL: SELECT * FROM customers WHERE id = @id
+        foreach (var customer in customers)
+        {
+            if (customer.Id == id)
+            {
+                return customer;
+            }
+        }
+        return null;
+    }
+
+    */
+
+
 }

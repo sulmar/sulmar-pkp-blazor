@@ -1,18 +1,25 @@
 ﻿@page "/customers"
 @using Domain.Models
+@inject HttpClient Http
 
 <MudText Typo="Typo.h3">Customers</MudText>
 
-@if (Customers is null)
+@if (customers is null)
 {
     <MudProgressCircular Color="Color.Primary" Size="Size.Small" Indeterminate="true" />
 }
 else
 {
-    <MudDataGrid Items="@Customers">
+    <MudDataGrid Items="@customers">
         <Columns>
             <PropertyColumn Property="x => x.Name" Title="Name" />
             <PropertyColumn Property="x => x.Email" Title="E-mail" />
+            <TemplateColumn>
+                <CellTemplate>
+                    <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Edit" 
+                        Href="@($"/customers/{context.Item.Id}")" />
+                </CellTemplate>
+            </TemplateColumn>
         </Columns>
     </MudDataGrid>
 }
@@ -20,14 +27,12 @@ else
 
 @code {
 
-   [Inject]
-   private HttpClient Http { get; set; }
-
-    private List<Customer>? Customers { get; set; }
+    private List<Customer>? customers;
 
     protected override async Task OnInitializedAsync()
     {
-        Customers = await Http.GetFromJsonAsync<List<Customer>>("api/customers");
+
+        customers = await Http.GetFromJsonAsync<List<Customer>>("api/customers");
     }
 
 }
