@@ -113,3 +113,47 @@ src/
 ├── Domain/                 # Warstwa domenowa
 └── Infrastructure/         # Warstwa infrastruktury
 ```
+
+# Instalacja szablonów MudBlazor w trybie offline
+
+Ten dokument opisuje, jak zainstalować szablony **MudBlazor.Templates** bez dostępu do Internetu lub bez możliwości połączenia z `nuget.org`.
+
+---
+
+## 🧩 Wymagania
+
+- Zainstalowane środowisko **.NET SDK** (6.0 lub nowsze)
+- Dostęp do innego komputera z Internetem (w celu pobrania paczki `.nupkg`)
+- Nośnik wymienny (np. pendrive) lub inny sposób przeniesienia pliku `.nupkg` do środowiska docelowego
+
+---
+
+## 🚀 Krok po kroku
+
+### 1. Pobierz paczkę `.nupkg`
+
+Na komputerze z dostępem do Internetu:
+
+1. Otwórz stronę NuGet:  
+   [https://www.nuget.org/packages/MudBlazor.Templates](https://www.nuget.org/packages/MudBlazor.Templates)
+2. Wybierz wersję, np. **7.0.3**
+3. Kliknij przycisk **Download package (.nupkg)**
+4. Zapisz plik np. jako: 
+```
+MudBlazor.Templates.7.0.3.nupkg
+```
+---
+
+### 2. Skopiuj paczkę do środowiska offline
+
+Przenieś plik `MudBlazor.Templates.<wersja>.nupkg` do folderu na komputerze bez dostępu do Internetu, np.:
+
+
+---
+
+### 3. Zainstaluj szablony z pliku
+
+Uruchom terminal i wykonaj polecenie:
+
+```bash
+dotnet new install "C:\local-nuget\MudBlazor.Templates.7.0.3.nupkg"
