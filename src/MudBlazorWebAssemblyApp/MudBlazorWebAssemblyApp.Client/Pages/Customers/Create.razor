@@ -1,13 +1,13 @@
 ﻿@page "/customers/create"
 @using Domain.Models
 
-<EditForm Model="@customer" OnValidSubmit="@OnValidSubmit" >
+<EditForm Model="@customer" OnValidSubmit="@OnValidSubmit" FormName="CustomerForm" >
     <MudGrid>
         <MudItem xs="12" sm="7">
             <MudCard>
                 <MudCardContent>
-                    <MudTextField Label="Name" For="@(() => customer.Name)" />
-                    <MudTextField Label="E-mail" For="@(() => customer.Email)" />
+                    <MudTextField Label="Name" @bind-Value="@customer.Name" For="@(() => customer.Name)" />
+                    <MudTextField Label="E-mail" @bind-Value="@customer.Email" For="@(() => customer.Email)" />
                 </MudCardContent>
                 
                 <MudCardActions>
@@ -23,10 +23,12 @@
 
 @code {
 
-    private Customer customer = new Customer();
+    private Customer customer = new Customer() { Name = "a"};
 
     private void OnValidSubmit(EditContext context)
     {
+        Console.WriteLine(customer.Name);
+
         // TODO: Dodaj request do Api
     }
 
