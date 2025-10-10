@@ -5,6 +5,10 @@
 
 <MudText Typo="Typo.h3">Customers</MudText>
 
+<MudButton Href="/customers/create" 
+    StartIcon="@Icons.Material.Filled.Add" 
+    Color="Color.Primary" >Create</MudButton>
+
 @if (customers is null)
 {
     <MudProgressCircular Color="Color.Primary" Size="Size.Small" Indeterminate="true" />
