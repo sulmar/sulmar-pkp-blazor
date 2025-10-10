@@ -1,6 +1,7 @@
 ﻿@page "/customers/create"
 @inject ICustomerService Api
 @inject NavigationManager Nav
+@inject ISnackbar Snackbar
 
 <EditForm Model="@customer" OnValidSubmit="@OnValidSubmit" FormName="CustomerForm" >
 
@@ -36,7 +37,11 @@
 
         await Api.AddAsync(customer);
 
+        Snackbar.Add($"Utworzono klienta Id: {customer.Id}", Severity.Success);
+
         Nav.NavigateTo("/customers");
+
+       
     }
 
 
