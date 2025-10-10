@@ -41,6 +41,13 @@ public class FakeCustomerRepository : ICustomerRepository
         return customers.Where(customer => customer.Id == id).FirstOrDefault();
     }
 
+    public void Remove(int id)
+    {
+        var customer = GetById(id);
+
+        customers.Remove(customer);
+    }
+
     /*
     public Customer GetById(int id)
     {

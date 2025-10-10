@@ -10,6 +10,7 @@ public interface ICustomerService
     Task<List<Customer>?> GetAllAsync();
     Task<Customer?> GetByIdAsync(int id);
     Task AddAsync(Customer customer);
+    Task DeleteAsync(int id);
 }
 
 // Primary Constructor
@@ -22,6 +23,11 @@ public class CustomerService(HttpClient _http) : ICustomerService
         Customer? result = await response.Content.ReadFromJsonAsync<Customer>();
 
         customer.Id = result.Id;
+    }
+
+    public async Task DeleteAsync(int id)
+    {
+        await _http.DeleteAsync($"api/customers/{id}");
     }
 
     public Task<List<Customer>?> GetAllAsync() => _http.GetFromJsonAsync<List<Customer>>("api/customers");

@@ -2,12 +2,14 @@
 @using Domain.Models
 @using MudBlazorWebAssemblyApp.Client.Services
 @inject ICustomerService Api
+@inject IDialogService DialogService
+@inject NavigationManager Nav
 
 <MudText Typo="Typo.h3">Customers</MudText>
 
-<MudButton Href="/customers/create" 
-    StartIcon="@Icons.Material.Filled.Add" 
-    Color="Color.Primary" >Create</MudButton>
+<MudButton Href="/customers/create"
+           StartIcon="@Icons.Material.Filled.Add"
+           Color="Color.Primary">Create</MudButton>
 
 @if (customers is null)
 {
@@ -21,8 +23,18 @@ else
             <PropertyColumn Property="x => x.Email" Title="E-mail" />
             <TemplateColumn>
                 <CellTemplate>
-                    <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Edit" 
-                        Href="@($"/customers/{context.Item.Id}")" />
+
+                    <MudStack Row>
+
+                        <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Edit"
+                                       Href="@($"/customers/{context.Item.Id}")" />
+
+                        <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Delete"
+                                @onclick="@(()=>DeleteAsync(context.Item.Id))"
+                        />
+
+                    </MudStack>
+
                 </CellTemplate>
             </TemplateColumn>
         </Columns>
@@ -36,7 +48,45 @@ else
 
     protected override async Task OnInitializedAsync()
     {
+        await LoadAsync();
+    }
+
+    private async Task LoadAsync()
+    {
         customers = await Api.GetAllAsync();
+    }
+
+
+    private async Task DeleteAsync(int id)
+    {
+        var result = await ShowDeleteDialogAsync(id);
+
+        if (result)
+        {
+            await Api.DeleteAsync(id);
+
+            await LoadAsync();
+
+            StateHasChanged();
+
+            // Nav.NavigateTo(Nav.Uri, forceLoad: true);
+        }
+    }
+
+    private async Task<bool> ShowDeleteDialogAsync(int id)
+    {
+        var dialog = await DialogService.ShowAsync<Dialogs.Dialog>("Potwierdzenie");
+
+        var result = await dialog.Result;
+
+        if (result.Canceled)
+        {
+            return false;
+        }
+        else
+            return true ;
+
+
     }
 
 }

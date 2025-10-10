@@ -13,7 +13,7 @@ builder.Services.AddSingleton<ICustomerRepository, FakeCustomerRepository>();
 
 builder.Services.AddCors(options => options.AddDefaultPolicy(
     policy => policy.WithOrigins("https://localhost:7049", "https://localhost:7118")
-                        .WithMethods("GET", "POST")
+                        .WithMethods("GET", "POST", "DELETE")
                         .AllowAnyHeader()
     
     ));

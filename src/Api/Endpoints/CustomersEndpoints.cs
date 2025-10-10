@@ -32,7 +32,7 @@ public static class CustomersEndpoints
         });
 
         group.MapPut("", () => "Updated customer");
-        group.MapDelete("", () => "Deleted customer");
+        group.MapDelete("{id}", (int id, ICustomerRepository repository) => repository.Remove(id) );
 
         return group;
     }
