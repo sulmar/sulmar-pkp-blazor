@@ -1,6 +1,6 @@
 ﻿@page "/customers/create"
-@using Domain.Models
-@using Blazored.FluentValidation
+@inject ICustomerService Api
+@inject NavigationManager Nav
 
 <EditForm Model="@customer" OnValidSubmit="@OnValidSubmit" FormName="CustomerForm" >
 
@@ -30,11 +30,13 @@
 
     private Customer customer = new Customer() { Name = "a"};
 
-    private void OnValidSubmit(EditContext context)
+    private async Task OnValidSubmit(EditContext context)
     {
         Console.WriteLine(customer.Name);
 
-        // TODO: Dodaj request do Api
+        await Api.AddAsync(customer);
+
+        Nav.NavigateTo("/customers");
     }
 
 

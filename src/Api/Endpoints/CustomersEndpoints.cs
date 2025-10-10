@@ -22,6 +22,7 @@ public static class CustomersEndpoints
 
         group.MapPost("", (Customer customer, ICustomerRepository repository) =>
         {
+            // TODO: Dodac walidacje za pomoca CustomerValidator
 
             repository.Add(customer);
 
