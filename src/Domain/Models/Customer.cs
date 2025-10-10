@@ -16,7 +16,7 @@ public class Customer
     [EmailAddress]
     public string Email { get; set; }
 
-
+    [RegularExpression("^Pkp*\\d{3}$")]
     public string Code { get; set; }
 
 

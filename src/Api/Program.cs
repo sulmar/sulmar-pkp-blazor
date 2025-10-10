@@ -9,11 +9,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddOpenApi();
 
 // Rejestracja w kontenerze wstrzykiwania zaleznosci (Dependency Injection)
-builder.Services.AddScoped<ICustomerRepository, FakeCustomerRepository>();
+builder.Services.AddSingleton<ICustomerRepository, FakeCustomerRepository>();
 
 builder.Services.AddCors(options => options.AddDefaultPolicy(
     policy => policy.WithOrigins("https://localhost:7049", "https://localhost:7118")
-                        .WithMethods("GET")
+                        .WithMethods("GET", "POST")
                         .AllowAnyHeader()
     
     ));

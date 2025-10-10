@@ -19,6 +19,15 @@ public class FakeCustomerRepository : ICustomerRepository
         };
     }
 
+    public void Add(Customer customer)
+    {
+        int id = customers.Max(c => c.Id);
+        id++;
+        customer.Id = id;
+
+        customers.Add(customer);
+    }
+
     public List<Customer> GetAll()
     {
         // Thread.Sleep(5000); // Symulacja opoznienia
