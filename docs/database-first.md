@@ -54,7 +54,17 @@ Po scaffolding powinny pojawić się:
 - klasy encji: Actor.cs, Film.cs, Category.cs, itd.
 
 
-# **🧩 Przydatne opcje**
+# 4. **🧩 Rozdzielenie Modelu domenowego od Infrastruktury**
+
+Poniżej masz poprawioną komendę, która rozdziela:
+	•	Model domenowy (encje) → projekt Domain
+	•	DbContext / EF Core (infrastruktura) → projekt Infrastructure
+
+To klasyczny podział zgodny z Clean Architecture.
+
+```
+dotnet ef dbcontext scaffold "Server=(localdb)\efcore-demo;Database=sakila;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -o ..\Sakila.Domain\Model --context-dir . -c SakilaContext --namespace Sakila.Domain.Model --context-namespace Sakila.Infrastructure --force
+```
 
 ###  **Nadpisanie istniejących plików**
 
