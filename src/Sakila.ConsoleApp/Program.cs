@@ -46,6 +46,39 @@ var query4 = context.Customers
 
 query4.Dump("Stronicowanie");
 
+// 5. Sortowanie
+var query5 = context.Customers
+    //.OrderBy(c => c.CreateDate) // ORDER BY CreateDate ASC
+    // .OrderByDescending(c => c.CreateDate) // ORDER BY CreateDate DESC
+    .OrderBy(c => c.FirstName)
+        .ThenBy(c => c.LastName)    // ORDER BY first_name, last_name
+    .Select(c => new { c.FirstName, c.LastName, c.Email })    
+    .ToList();
+
+
+query5.Dump("Sortowanie");
+
+// 6. Filtrowanie
+var query6 = context.Customers
+    .Where(c => c.FirstName.StartsWith("A")) // WHERE first_name LIKE 'A%' 
+    .Select(c => new { c.FirstName, c.LastName, c.Email })
+    .ToList();
+
+
+query6.Dump("Filtrowanie na A*");
+
+// 7. Pobranie obiektu po kluczu PK
+var query7 = context.Customers.Find(1);
+
+Console.WriteLine(query7);
+
+// 8. Pobraie obiektu po kryterium
+var query8 = context.Customers.SingleOrDefault(c => c.Email == "BOB.SMITH@sakilacustomer.org");
+
+var query9 = context.Customers.FirstOrDefault(c=>c.StoreId == 1);
+
+Console.WriteLine(query8);
+
 
 
 
