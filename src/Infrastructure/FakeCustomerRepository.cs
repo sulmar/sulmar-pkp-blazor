@@ -36,7 +36,7 @@ public class FakeCustomerRepository : ICustomerRepository
     }
 
     public Customer GetById(int id)
-    {
+    {        
         // LINQ 
         return customers.Where(customer => customer.Id == id).FirstOrDefault();
     }
