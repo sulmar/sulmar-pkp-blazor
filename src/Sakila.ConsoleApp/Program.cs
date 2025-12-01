@@ -72,12 +72,16 @@ var query7 = context.Customers.Find(1);
 
 Console.WriteLine(query7);
 
-// 8. Pobraie obiektu po kryterium
+// 8. Pobranie obiektu po kryterium
 var query8 = context.Customers.SingleOrDefault(c => c.Email == "BOB.SMITH@sakilacustomer.org");
 
 var query9 = context.Customers.FirstOrDefault(c=>c.StoreId == 1);
 
 Console.WriteLine(query8);
+
+// TODO: zachlanne pobieranie danych
+
+// TODO: modyfikacja rekordow (wspolbieznosc)
 
 
 
