@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sakila.Domain", "Sakila.Dom
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sakila.Infrastructure", "Sakila.Infrastructure\Sakila.Infrastructure.csproj", "{D695926A-A056-1FBB-D40F-0C9E51005075}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sakila.ConsoleApp", "Sakila.ConsoleApp\Sakila.ConsoleApp.csproj", "{B4C4CE4D-E8BB-401B-8AC9-4301F8AB7A0A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -113,6 +115,18 @@ Global
 		{D695926A-A056-1FBB-D40F-0C9E51005075}.Release|x64.Build.0 = Release|Any CPU
 		{D695926A-A056-1FBB-D40F-0C9E51005075}.Release|x86.ActiveCfg = Release|Any CPU
 		{D695926A-A056-1FBB-D40F-0C9E51005075}.Release|x86.Build.0 = Release|Any CPU
+		{B4C4CE4D-E8BB-401B-8AC9-4301F8AB7A0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4C4CE4D-E8BB-401B-8AC9-4301F8AB7A0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4C4CE4D-E8BB-401B-8AC9-4301F8AB7A0A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B4C4CE4D-E8BB-401B-8AC9-4301F8AB7A0A}.Debug|x64.Build.0 = Debug|Any CPU
+		{B4C4CE4D-E8BB-401B-8AC9-4301F8AB7A0A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B4C4CE4D-E8BB-401B-8AC9-4301F8AB7A0A}.Debug|x86.Build.0 = Debug|Any CPU
+		{B4C4CE4D-E8BB-401B-8AC9-4301F8AB7A0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4C4CE4D-E8BB-401B-8AC9-4301F8AB7A0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4C4CE4D-E8BB-401B-8AC9-4301F8AB7A0A}.Release|x64.ActiveCfg = Release|Any CPU
+		{B4C4CE4D-E8BB-401B-8AC9-4301F8AB7A0A}.Release|x64.Build.0 = Release|Any CPU
+		{B4C4CE4D-E8BB-401B-8AC9-4301F8AB7A0A}.Release|x86.ActiveCfg = Release|Any CPU
+		{B4C4CE4D-E8BB-401B-8AC9-4301F8AB7A0A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

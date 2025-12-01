@@ -24,4 +24,7 @@ public class Customer
     
     [Compare(nameof(Password))]
     public string ConfirmPassword { get; set; }
+
+
+  
 }

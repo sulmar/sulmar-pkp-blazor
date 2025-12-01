@@ -1,8 +1,12 @@
 using Api.Endpoints;
 using Domain.Abstractions;
 using Infrastructure;
+using Microsoft.AspNetCore.Authentication.Negotiate;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
+
+var connectionString = builder.Configuration.GetConnectionString("SakilaConnection");
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
@@ -18,7 +22,21 @@ builder.Services.AddCors(options => options.AddDefaultPolicy(
     
     ));
 
+// dotnet add package EE
+builder.Services.AddAuthentication(NegotiateDefaults.AuthenticationScheme)
+    .AddNegotiate();
+
+// Rejetracja polityki VIP
+builder.Services.AddAuthorization(options => options.AddPolicy("VIP", builder => builder
+        .RequireAuthenticatedUser()
+        .RequireClaim("scope", "read")
+        .RequireRole("foo")
+        ));
+
 var app = builder.Build();
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

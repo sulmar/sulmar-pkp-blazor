@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Xml.Linq;
 
 namespace Sakila.Infrastructure;
 
@@ -30,4 +31,6 @@ public partial class Customer
     public virtual ICollection<Rental> Rentals { get; set; } = new List<Rental>();
 
     public virtual Store Store { get; set; } = null!;
+
+    
 }
