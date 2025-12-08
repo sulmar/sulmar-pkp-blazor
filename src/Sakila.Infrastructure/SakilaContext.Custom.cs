@@ -15,5 +15,11 @@ public partial class SakilaContext
             .Entity<Customer>()
             .Property(p => p.FirstName)
             .HasColumnType("varchar(45)");
+
+        modelBuilder
+            .Entity<Customer>()
+            .Navigation(p => p.Address) // Navigation Property
+            .AutoInclude();             // Automatyczny Include
+
     }
 }

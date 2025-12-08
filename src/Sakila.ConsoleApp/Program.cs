@@ -108,12 +108,51 @@ foreach (var customer in query10)
     }
 }
 
+// Filtrowanie powiazanych zbiorow
+var lastPaymentsQuery = context.Customers
+    .Include(c => c.Payments
+                    .Where(p => p.Amount > 10)
+                    .OrderByDescending(p => p.PaymentDate)
+                    .Take(5))
+    .ToList();
+
+lastPaymentsQuery.Dump();
+
+
+Console.WriteLine("Split Query");
+
+// Split Query
+var query12 = context.Customers
+    .Where(c => c.FirstName.StartsWith("A"))
+     /// .Include(c => c.Address) // wykona lewe zlaczenie (inner outer join) do tabeli Address
+     .Include(c => c.Address.City.Country) // wykona lewe zlaczenia (inner join) do tabeli Address, City i Country
+                                           //.Include(c => c.Rentals)
+     .Include(c => c.Payments)
+        .ThenInclude(p => p.Rental) // Zagniezdzenie stosowane wraz z Collection
+    .AsSplitQuery()
+    .ToList();
+
 
 var sql = "SELECT * FROM [customer] WHERE first_name LIKE 'A%'";
 
 var query11 = context.Customers.FromSqlRaw(sql).ToList();
 
 query11.Dump();
+
+// AutoInclude  -> patrz SakilaContext.Custom.cs
+
+var query13 = context.Customers.ToList();
+
+foreach (var customer in query13)
+{
+    Console.WriteLine($"{customer.FirstName} {customer.LastName} {customer.Address}");
+}
+
+// Lokalne wylaczenie AutoInclude
+var query14 = context.Customers
+    .IgnoreAutoIncludes()
+    .ToList();   
+
 
 /*
 
