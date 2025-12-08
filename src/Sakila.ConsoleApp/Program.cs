@@ -151,7 +151,7 @@ foreach (var customer in query13)
 // Lokalne wylaczenie AutoInclude
 var query14 = context.Customers
     .IgnoreAutoIncludes()
-    .ToList();   
+    .ToList();
 
 
 /*
@@ -187,6 +187,28 @@ string result = (string)output.Value;
 
 
 */
+
+// Jawne pobieranie danych (Explicit Loading)
+
+var query15 = context.Customers.ToList();
+
+foreach (var customer in query15)
+{
+    Console.WriteLine($"Loading data for {customer.FirstName} {customer.LastName}");
+
+    // Pobierz pojedynczy obiekt
+    await context.Entry(customer).Reference(p => p.Store).LoadAsync();
+
+    // Pobierz kolekcje obiektow
+    await context.Entry(customer).Collection(p => p.Rentals).LoadAsync();
+
+    // Dlugotrwajaca operacja
+
+    Console.WriteLine($"Processing {customer.FirstName} {customer.LastName} {customer.Store} {customer.Rentals.Count}");
+    await Task.Delay(TimeSpan.FromSeconds(10));
+}
+
+
 
 
 
