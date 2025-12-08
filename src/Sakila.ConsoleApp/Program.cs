@@ -209,6 +209,9 @@ foreach (var customer in query15)
 }
 
 
+// 
+var cities = context.Cities.AsNoTracking().ToList();
+
 
 
 
